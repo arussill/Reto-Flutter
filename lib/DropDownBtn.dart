@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 
 class DropDownBtn extends StatefulWidget {
-  DropDownBtn({Key? key}) : super(key: key);
+  const DropDownBtn({Key? key}) : super(key: key);
 
   @override
   State<DropDownBtn> createState() => _DropDownBtnState();

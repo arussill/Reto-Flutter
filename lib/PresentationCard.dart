@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'DropDownBtn.dart';
+import 'PhotoPerfil.dart';
 
 class CardPresentationScreen extends StatefulWidget {
   @override
@@ -221,13 +222,7 @@ class _CardPresentationScreenState extends State<CardPresentationScreen> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      Text(
-                        'Tarjeta de presentación',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 40,
-                            fontWeight: FontWeight.bold),
-                      ),
+                      PhotoPerfil(),
                       SizedBox(height: 50),
                       buildNameTextField(),
                       SizedBox(height: 20),
