@@ -2,15 +2,16 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'DropDownBtn.dart';
 
 class CardPresentationScreen extends StatefulWidget {
   @override
   State<CardPresentationScreen> createState() => _CardPresentationScreenState();
 }
 
-var _listId = ['Seleccione una opción', 'C.C', 'Pasaporte', 'C.E', 'Otro'];
+// var _listId = ['Seleccione una opción', 'C.C', 'Pasaporte', 'C.E', 'Otro'];
 
-String _vista = 'Seleccione una opción';
+//   String _vista = 'Seleccione una opción';
 
 Widget buildNameTextField() {
   return Column(
@@ -102,72 +103,6 @@ Widget buildRolTextField() {
               hintStyle: TextStyle(color: Colors.black38),
             )),
       )
-    ],
-  );
-}
-
-Widget buildListId() {
-  return Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: <Widget>[
-      SizedBox(
-        height: 10,
-      ),
-      Container(
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(10),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black26,
-                blurRadius: 6,
-                offset: Offset(0, 2),
-              ),
-            ],
-          ),
-          height: 60,
-          child: DropdownButton(
-            isExpanded: true,
-            underline: Container(),
-            icon: Icon(
-              Icons.keyboard_arrow_down,
-              color: Colors.black38,
-            ),
-            value: _vista,
-            items: _listId.map((String value) {
-              return DropdownMenuItem(
-                value: value,
-                child: Text(
-                  value,
-                  style: TextStyle(color: Colors.black87),
-                ),
-              );
-            }).toList(),
-            onChanged: null,
-            // onChanged: (String? value) {
-            //   setState(() {
-            //     _vista = value;
-            //   });
-            // },
-            hint: Text(_vista),
-            style: TextStyle(color: Colors.black87),
-
-            // TextField(
-            // inputFormatters: <TextInputFormatter>[
-            //   FilteringTextInputFormatter.digitsOnly
-            // ],
-            // style: TextStyle(color: Colors.black87),
-            // decoration: InputDecoration(
-            //   border: InputBorder.none,
-            //   contentPadding: EdgeInsets.only(top: 14),
-            //   prefixIcon: Icon(
-            //     Icons.perm_identity,
-            //     color: Colors.black38,
-            //   ),
-            //   hintText: 'documento de identidad',
-            //   hintStyle: TextStyle(color: Colors.black38),
-            // )),
-          ))
     ],
   );
 }
@@ -298,7 +233,7 @@ class _CardPresentationScreenState extends State<CardPresentationScreen> {
                       SizedBox(height: 20),
                       buildRolTextField(),
                       SizedBox(height: 20),
-                      buildListId(),
+                      DropDownBtn(),
                       SizedBox(height: 20),
                       buildIdTextField(),
                       buildSaveBtn(),
